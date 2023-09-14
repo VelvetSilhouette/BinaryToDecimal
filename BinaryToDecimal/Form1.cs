@@ -15,29 +15,30 @@ namespace BinaryToDecimal
                 BinTxt.Clear();
             }
             int Result = 0;
-            BinToDecCal(BinTxt.Text,ref Result);
+            BinToDecCal(BinTxt.Text);
 
-            DecTxt.Text = Convert.ToString(Result);
+            DecTxt.Text = Convert.ToString(BinToDecCal(BinTxt.Text));
 
 
         }
-        public static void BinToDecCal(string a,ref int Result)
+        public static int BinToDecCal(string a)
         {
-            int x = a.Length -1 ;
+            int Result = 0;
+            int x = a.Length - 1;
             foreach (char b in a)
-            { 
+            {
                 if (b == '1')
                 {
-                    int y = 1;
-                    y = (int)Math.Pow(2,x) * y;
+                    Result += (int)Math.Pow(2, x);
                     x--;
-                    Result += y;
                 }
                 else
                 {
                     x--;
                 }
+
             }
-          }
+            return Result;
+        }
     }
 }

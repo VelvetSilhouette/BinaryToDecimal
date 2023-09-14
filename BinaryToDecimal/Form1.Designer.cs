@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             ConfBtn = new Button();
             BinTxt = new TextBox();
             DecTxt = new TextBox();
@@ -67,10 +68,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(554, 165);
+            ClientSize = new Size(572, 190);
             Controls.Add(DecTxt);
             Controls.Add(BinTxt);
             Controls.Add(ConfBtn);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Bin2Dec Generator";
             ResumeLayout(false);

@@ -29,9 +29,9 @@ namespace BinaryToDecimal
                 if (b == '1')
                 {
                     int y = 1;
-                    y = (2 ^ x) * y;
+                    y = (int)Math.Pow(2,x) * y;
                     x--;
-                    Result = +y;
+                    Result += y;
                 }
                 else
                 {

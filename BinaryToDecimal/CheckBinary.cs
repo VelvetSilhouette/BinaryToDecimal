@@ -7,20 +7,18 @@ using System.Threading.Tasks;
 
 namespace BinaryToDecimal
 {
-    public class CheckBinary
+    public static class CheckBinary
     {
-        public static bool CheckBinaryNumb(string a)
+        public static bool CheckBinaryNumber(string value)
         {
             Regex regex = new Regex("^[01]*$");
-            if (a == null)
+
+            if (value == "" || !regex.IsMatch(value))
             {
-                MessageBox.Show("Please Enter a Valid Decimal Number(only consist of 1 and 0)","Null Warning");
-            }
-            else if (!regex.IsMatch(a))
-            {
-                MessageBox.Show("Please Enter a Valid Decimal Number(only consist of 1 and 0)","Warning");
+                MessageBox.Show("Please enter a valid Decimal Number(only consist of 1 and 0).", (value == "") ? "Null Warning" : "Warning");
                 return true;
             }
+
             return false;
         }
     }

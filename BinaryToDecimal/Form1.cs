@@ -5,39 +5,35 @@ namespace BinaryToDecimal
         public Form1()
         {
             InitializeComponent();
-
         }
-        private void ConfBtn_Click(object sender, EventArgs e)
+
+        private void btnGenerate_Click(object sender, EventArgs e)
         {
-            DecTxt.Clear();
-            if (CheckBinary.CheckBinaryNumb(BinTxt.Text))
+            txbDecimal.Clear();
+
+            if (CheckBinary.CheckBinaryNumber(txbBinary.Text))
             {
-                BinTxt.Clear();
+                txbBinary.Clear();
             }
-            int Result = 0;
-            BinToDecCal(BinTxt.Text,ref Result);
 
-            DecTxt.Text = Convert.ToString(Result);
-
-
+            txbDecimal.Text = BinToDecCal(txbBinary.Text).ToString();
         }
-        public static void BinToDecCal(string a,ref int Result)
+
+        private double BinToDecCal(string value)
         {
-            int x = a.Length -1 ;
-            foreach (char b in a)
-            { 
+            double result = 0;
+            int x = value.Length - 1;
+
+            foreach (char b in value)
+            {
                 if (b == '1')
                 {
-                    int y = 1;
-                    y = (int)Math.Pow(2,x) * y;
-                    x--;
-                    Result += y;
+                    result += Math.Pow(2, x);
                 }
-                else
-                {
-                    x--;
-                }
+                x--;
             }
-          }
+
+            return result;
+        }
     }
 }

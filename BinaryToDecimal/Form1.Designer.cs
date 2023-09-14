@@ -28,49 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ConfBtn = new Button();
-            BinTxt = new TextBox();
-            DecTxt = new TextBox();
+            btnGenerate = new Button();
+            txbBinary = new TextBox();
+            txbDecimal = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // ConfBtn
+            // btnGenerate
             // 
-            ConfBtn.Location = new Point(428, 46);
-            ConfBtn.Name = "ConfBtn";
-            ConfBtn.Size = new Size(98, 77);
-            ConfBtn.TabIndex = 0;
-            ConfBtn.Text = "Generate";
-            ConfBtn.UseVisualStyleBackColor = true;
-            ConfBtn.Click += ConfBtn_Click;
+            btnGenerate.Location = new Point(374, 34);
+            btnGenerate.Margin = new Padding(3, 2, 3, 2);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(86, 58);
+            btnGenerate.TabIndex = 0;
+            btnGenerate.Text = "Generate";
+            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerate.Click += btnGenerate_Click;
             // 
-            // BinTxt
+            // txbBinary
             // 
-            BinTxt.AcceptsReturn = true;
-            BinTxt.Location = new Point(34, 46);
-            BinTxt.MaxLength = 8;
-            BinTxt.Name = "BinTxt";
-            BinTxt.PlaceholderText = "Binary";
-            BinTxt.Size = new Size(370, 27);
-            BinTxt.TabIndex = 1;
+            txbBinary.AcceptsReturn = true;
+            txbBinary.Location = new Point(30, 34);
+            txbBinary.Margin = new Padding(3, 2, 3, 2);
+            txbBinary.MaxLength = 8;
+            txbBinary.Name = "txbBinary";
+            txbBinary.PlaceholderText = "Binary";
+            txbBinary.Size = new Size(324, 23);
+            txbBinary.TabIndex = 1;
             // 
-            // DecTxt
+            // txbDecimal
             // 
-            DecTxt.Location = new Point(34, 97);
-            DecTxt.Multiline = true;
-            DecTxt.Name = "DecTxt";
-            DecTxt.PlaceholderText = "Decimal";
-            DecTxt.ReadOnly = true;
-            DecTxt.Size = new Size(370, 26);
-            DecTxt.TabIndex = 2;
+            txbDecimal.Location = new Point(30, 73);
+            txbDecimal.Margin = new Padding(3, 2, 3, 2);
+            txbDecimal.Multiline = true;
+            txbDecimal.Name = "txbDecimal";
+            txbDecimal.PlaceholderText = "Decimal";
+            txbDecimal.ReadOnly = true;
+            txbDecimal.Size = new Size(324, 20);
+            txbDecimal.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 15);
+            label1.TabIndex = 3;
+            label1.Text = "MAPPA Animation";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AcceptButton = btnGenerate;
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(554, 165);
-            Controls.Add(DecTxt);
-            Controls.Add(BinTxt);
-            Controls.Add(ConfBtn);
+            ClientSize = new Size(485, 124);
+            Controls.Add(label1);
+            Controls.Add(txbDecimal);
+            Controls.Add(txbBinary);
+            Controls.Add(btnGenerate);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Bin2Dec Generator";
             ResumeLayout(false);
@@ -79,8 +95,9 @@
 
         #endregion
 
-        private Button ConfBtn;
-        public TextBox BinTxt;
-        public TextBox DecTxt;
+        private Button btnGenerate;
+        public TextBox txbBinary;
+        public TextBox txbDecimal;
+        private Label label1;
     }
 }
